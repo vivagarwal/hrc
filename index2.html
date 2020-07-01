@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Variation</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script>
+        var options ={
+            chart: {
+                renderTo:"container",
+                borderColor: '#0000ff',
+                borderWidth: 3,
+                height: 700,
+                type: 'column'    
+            },
+            title: {
+        text: 'Type of Transmission for the Individuals'
+    },
+    subtitle: {
+        text: '1705904'
+    },
+    xAxis: {
+        type: 'category',
+        labels: {
+            rotation: false,
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif',
+            }
+        },
+        title: {
+            text: 'Transmission Type',
+            style : {
+                color: '#0000ff'
+        }
+        }
+        
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Count',
+            style : {
+            color: '#0000ff'
+        }
+        },
+        
+    },
+    legend: {
+        enabled: true,
+        floating: false,
+        align: 'center',
+        
+    },
+    tooltip: {
+        pointFormat: 'Number of Positive Cases: <b>{point.y:.1f} </b>'
+    },
+    series: [{
+        name: 'Count',
+        data: [
+            ['Local', 290,],
+            ['Imported', 270],
+            ['TBD', 25],
+            ['Unknown', 0],
+           
+        ],
+
+        color : '#ffd700'
+   
+    }]
+
+    }
+        var charts = new Highcharts.chart(options);
+    </script>
+    
+</body>
+</html>

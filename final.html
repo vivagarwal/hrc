@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Covid-19</title>
+
+<style>
+  
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 20%;
+    padding-left: 140px;
+    padding-top: 30px;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 1px;
+    text-align: center;
+    background-color:#ffffff;
+    height: 100px;
+    
+  }
+  
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+</head>>
+
+<body>
+    <div class="row">
+        <div class="column">
+          <div class="card"><p>District</p><p style="font-size: 25px;">23</p></div>
+        </div>
+        <div class="column">
+          <div class="card"><p>No of States</p><p style="font-size: 25px;">23</p></div>
+        </div>
+        <div class="column">
+          <div class="card"><p>Total Count</p><p style="font-size: 25px;">23</p></div>
+        </div>
+    </div>
+
+
+    <div style="width: 100%; margin-top: 5%;">
+        <div id="container" style="width: 48%; margin-left: 0%; height: 500px; float: left;"> 
+        </div>
+        <div id="container1" style="margin-left: 53%;margin-right: 0%; height: 500px;"> 
+        </div>
+    </div>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script>
+        var options ={
+            chart: {
+                renderTo:"container",
+                borderColor: '#0000ff',
+                borderWidth: 3,
+                height: 500,
+                type: 'column',
+                
+            },
+            title: {
+        text: 'Top 10 States with most number of cases'
+    },
+    subtitle: {
+        text: '1705904'
+    },
+    xAxis: {
+        type: 'category',
+        labels: {
+            rotation: -45,
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif',
+            }
+        },
+        title: {
+            text: 'State',
+            style : {
+                color: '#0000ff'
+        }
+        }
+        
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Count',
+            style : {
+            color: '#0000ff'
+        }
+        },
+        
+    },
+    legend: {
+        enabled: true,
+        floating: false,
+        align: 'center',
+        
+    },
+    tooltip: {
+        pointFormat: 'Number of Positive Cases: <b>{point.y:.1f} </b>'
+    },
+    series: [{
+        name: 'Count',
+        data: [
+            ['Karnataka', 125,],
+            ['Tamil Nadu', 80],
+            ['Kerala', 75],
+            ['Maharatrs', 66],
+            ['Gujarat', 50],
+            ['Uttar Pradesh', 45],
+            ['Andhra Pradesh', 30],
+            ['Telanga', 28],
+            ['Gujarat', 20],
+            ['Rajasthan', 19],
+           
+        ],
+
+        color : '#ff0000'
+      
+    }]
+
+    }
+        var charts = new Highcharts.chart(options);
+    </script>
+
+<script>
+    var opt ={
+        chart: {
+            renderTo:"container1",
+            borderColor: '#0000ff',
+            borderWidth: 3,
+            height: 500,
+            type: 'column'    
+        },
+        title: {
+    text: 'Type of Transmission for the Individuals'
+},
+subtitle: {
+    text: '1705904'
+},
+xAxis: {
+    type: 'category',
+    labels: {
+        rotation: false,
+        style: {
+            fontSize: '13px',
+            fontFamily: 'Verdana, sans-serif',
+        }
+    },
+    title: {
+        text: 'Transmission Type',
+        style : {
+            color: '#0000ff'
+    }
+    }
+    
+},
+yAxis: {
+    min: 0,
+    title: {
+        text: 'Count',
+        style : {
+        color: '#0000ff'
+    }
+    },
+    
+},
+legend: {
+    enabled: true,
+    floating: false,
+    align: 'center',
+    
+},
+tooltip: {
+    pointFormat: 'Number of Positive Cases: <b>{point.y:.1f} </b>'
+},
+series: [{
+    name: 'Count',
+    data: [
+        ['Local', 290,],
+        ['Imported', 270],
+        ['TBD', 25],
+        ['Unknown', 0],
+       
+    ],
+
+    color : '#ffd700'
+
+}]
+
+}
+    var charts = new Highcharts.chart(opt);
+</script>
+    
+</body>
+</html>
